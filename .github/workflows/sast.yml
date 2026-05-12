@@ -1,7 +1,5 @@
 name: Perform Mixeway Scan
 
-on: [push]
-
 jobs:
   mixeway-scan:
     name: Mixeway Scanning
@@ -12,7 +10,7 @@ jobs:
       - name: Prepare variables
         id: vars
         shell: bash
-	run: |
+        run: |
           echo "::set-output name=branch::$(echo ${GITHUB_REF#refs/heads/})"
           echo "::set-output name=sha_short::$(git rev-parse HEAD)"
 
